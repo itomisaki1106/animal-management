@@ -15,8 +15,12 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned()->index();
             $table->string('name', 100)->index();
-            $table->string('type', 100)->nullable();
+            $table->tinyInteger('type')->nullable();
+            $table->tinyInteger('gender')->index();
+            $table->tinyInteger('healthCondition')->index();
+            $table->tinyInteger('recruitement')->index();
             $table->string('detail', 500)->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }
