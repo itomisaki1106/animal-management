@@ -26,8 +26,10 @@
                             <tr>
                                 <th>ID</th>
                                 <th>名前</th>
+                                <th>性別</th>
                                 <th>種別</th>
-                                <th>詳細</th>
+                                <th>募集状況</th>
+                                <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,8 +37,10 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->type }}</td>
-                                    <td>{{ $item->detail }}</td>
+                                    <td>{{config('auth.gender')[$item->gender] ?? ''}}</td>
+                                    <td>{{config('auth.type')[$item->type] ?? ''}}</td>
+                                    <td>{{config('auth.recruite')[$item->recruitement] ?? ''}}</td>
+                                    <!-- TODO　ルーティング設定後リンク書換　<td><a href="edit/{{$item->id}}">編集・削除</a></td> -->
                                 </tr>
                             @endforeach
                         </tbody>

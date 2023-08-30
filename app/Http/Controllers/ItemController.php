@@ -25,8 +25,12 @@ class ItemController extends Controller
     {
         // 商品一覧取得
         $items = Item::all();
-
-        return view('item.index', compact('items'));
+        //dd(config('auth.type.1')); 
+        //$value config()
+        //$value = config('app.timezone');
+        return view('item.index')->with([
+            'items' => $items,
+        ]);
     }
 
     /**
@@ -46,7 +50,11 @@ class ItemController extends Controller
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
                 'type' => $request->type,
+                'gender' => 1,
+                'healthCondition' => 2,
+                'recruitement'=> 3,
                 'detail' => $request->detail,
+                'image' => null,
             ]);
 
             return redirect('/items');

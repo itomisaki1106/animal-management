@@ -30,12 +30,43 @@
 
                         <div class="form-group">
                             <label for="type">種別</label>
-                            <input type="text" class="form-control" id="type" name="type" placeholder="種別">
+                            <select name="type" id="" class="form-control">
+                                @foreach(config('auth.type') as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="health">健康状態</label>
+                            <select name="health" id="" class="form-control">
+                                @foreach(config('auth.hc') as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recruite">募集状況</label>
+                            <select name="recruite" id="" class="form-control">
+                                @foreach(config('auth.recruite') as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">性別</label>
+                            <select name="gender" id="" class="form-control">
+                                @foreach(config('auth.gender') as $key => $value)
+                                <option value="{{$key}}">{{$value}}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="form-group">
                             <label for="detail">詳細</label>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <input type="textarea" class="form-control" id="detail" name="detail" placeholder="詳細説明">
                         </div>
                     </div>
 
