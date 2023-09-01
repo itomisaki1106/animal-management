@@ -3,7 +3,8 @@
 @section('title', '商品登録')
 
 @section('content_header')
-    <h1>商品登録</h1>
+    <h1>個体編集</h1>
+    <p>個体番号：{{ $items->id }}</p>
 @stop
 
 @section('content')
@@ -25,15 +26,15 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">名前</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name',$items->name) }}">
                         </div>
 
                         <div class="form-group">
                             <label for="type">種別</label>
                             <select name="type" id="" class="form-control">
                                 @foreach(config('auth.type') as $key => $value)
-                                <option value="{{$key}}">{{$value}}</option>
-                                @endforeach
+                                <option value="{{$key}}" @if($key == old('type',$items->type))selected @endif>{{$value}}</option>
+                                 @endforeach
                             </select>
                         </div>
 
@@ -41,7 +42,7 @@
                             <label for="gender">性別</label>
                             <select name="gender" id="" class="form-control">
                                 @foreach(config('auth.gender') as $key => $value)
-                                <option value="{{$key}}">{{$value}}</option>
+                                <option value="{{$key}}" @if($key == old('gender',$items->gender))selected @endif>{{$value}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -50,7 +51,7 @@
                             <label for="health">健康状態</label>
                             <select name="health" id="" class="form-control">
                                 @foreach(config('auth.hc') as $key => $value)
-                                <option value="{{$key}}">{{$value}}</option>
+                                <option value="{{$key}}" @if($key == old('health',$items->healthCondition))selected @endif>{{$value}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -59,19 +60,19 @@
                             <label for="recruite">募集状況</label>
                             <select name="recruite" id="" class="form-control">
                                 @foreach(config('auth.recruite') as $key => $value)
-                                <option value="{{$key}}">{{$value}}</option>
+                                <option value="{{$key}}" @if($key == old('recruite',$items->recruitement))selected @endif>{{$value}}</option>
                                 @endforeach
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="detail">詳細</label>
-                            <input type="textarea" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <textarea class="form-control" id="detail" name="detail">{{ old('detail',$items->detail) }}</textarea>
                         </div>
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">登録</button>
+                        <button type="submit" class="btn btn-primary">変更して保存</button>
                     </div>
                 </form>
             </div>

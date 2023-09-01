@@ -50,9 +50,9 @@ class ItemController extends Controller
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
                 'type' => $request->type,
-                'gender' => 1,
-                'healthCondition' => 2,
-                'recruitement'=> 3,
+                'gender' => $request->gender,
+                'healthCondition' => $request->health,
+                'recruitement'=> $request->health,
                 'detail' => $request->detail,
                 'image' => null,
             ]);
@@ -61,5 +61,46 @@ class ItemController extends Controller
         }
 
         return view('item.add');
+    }
+    
+    public function edit(Request $request)
+    {
+        // POSTリクエストのとき
+        if ($request->isMethod('post')) {
+            // バリデーション
+            $this->validate($request, [
+                'name' => 'required|max:100',
+            ]);
+
+            // 商品登録
+            $item = Item::find($request->id);
+            
+            
+            $item->user_id = \Auth::id();
+            $item->name = $request->name;
+            $item->type = $request->type;
+            $item->gender = $request->gender;
+            $item->healthCondition = $request->health;
+            $item->recruitement = $request->recruite;
+            $item->detail = $request->detail;
+            $item->image = null;
+            $item->save();
+            
+            return redirect('/items');
+        }
+
+        
+        $id = $request->id;
+        $user_id = \Auth::user()->name;
+
+        $items = \DB::table('items')->find($id);
+        // $items = Item::find($id);
+        
+        return view('/item/edit')->with([
+            'items' => $items,
+            // 'user_id' => $user_id
+            'test' => $id,
+        ]);    
+        
     }
 }

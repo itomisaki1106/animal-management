@@ -40,7 +40,8 @@
                                     <td>{{config('auth.gender')[$item->gender] ?? ''}}</td>
                                     <td>{{config('auth.type')[$item->type] ?? ''}}</td>
                                     <td>{{config('auth.recruite')[$item->recruitement] ?? ''}}</td>
-                                    <!-- TODO　ルーティング設定後リンク書換　<td><a href="edit/{{$item->id}}">編集・削除</a></td> -->
+                                    <!-- <td><a href="{{ url('items/edit/{$item->id}')}}">編集・削除</a></td> -->
+                                    <td><a href="items/edit/{{$item->id}}">編集・削除</a></td>
                                 </tr>
                             @endforeach
                         </tbody>
