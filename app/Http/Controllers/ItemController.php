@@ -46,6 +46,12 @@ class ItemController extends Controller
             ]);
 
             // 商品登録
+            if(isset($request->image)){
+                $image = base64_encode(file_get_contents($request->image->getRealPath()));
+            }else{
+                $image =null;
+            }
+
             Item::create([
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
@@ -55,7 +61,7 @@ class ItemController extends Controller
                 'healthCondition' => $request->health,
                 'recruitement'=> $request->health,
                 'detail' => $request->detail,
-                'image' => null,
+                'image' => $image,
             ]);
 
             return redirect('/items');
@@ -73,9 +79,9 @@ class ItemController extends Controller
                 'name' => 'required|max:100',
             ]);
 
-            // 商品登録
+            // 商品更新
             $item = Item::find($request->id);
-            
+            $type = Item::TYPE;
             
             $item->user_id = \Auth::id();
             $item->name = $request->name;
@@ -85,7 +91,12 @@ class ItemController extends Controller
             $item->healthCondition = $request->health;
             $item->recruitement = $request->recruite;
             $item->detail = $request->detail;
-            $item->image = null;
+            if(isset($request->image)){
+                $image = base64_encode(file_get_contents($request->image->getRealPath()));
+                $image = $item->image;
+                $item->image = $image;
+            }
+            
             $item->save();
             
             return redirect('/items');

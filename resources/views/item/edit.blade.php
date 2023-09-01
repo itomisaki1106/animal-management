@@ -21,7 +21,7 @@
             @endif
 
             <div class="card card-primary">
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -35,6 +35,10 @@
                                 @foreach(config('auth.type') as $key => $value)
                                 <option value="{{$key}}" @if($key == old('type',$items->type))selected @endif>{{$value}}</option>
                                 @endforeach
+                                @foreach(config('auth.type') as $key => $value)
+                                <option value="{{$key}}" @if($key == old('type',$items->type))selected @endif>{{$value}}</option>
+                                @endforeach
+
                             </select>
                         </div>
 
@@ -73,6 +77,12 @@
                         <div class="form-group">
                             <label for="detail">詳細</label>
                             <textarea class="form-control" id="detail" name="detail">{{ old('detail',$items->detail) }}</textarea>
+                        </div>
+
+                        <div class="form-group"> 
+                            <label for="image">画像</label>
+                            <!-- <input type="file" name="image" id="image" accept="image/jpeg, image/png"> -->
+                            <input type="file" name="image" id="image" class="form-control">
                         </div>
                     </div>
 

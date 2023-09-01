@@ -19,7 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::prefix('home')->group(function() {
+    Route::get('/list', [App\Http\Controllers\HomeController::class, 'index']);
+    Route::get('/detail/{id}', [App\Http\Controllers\HomeController::class, 'detail']);
+});
+
 
 Route::prefix('items')->group(function () {
     Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);

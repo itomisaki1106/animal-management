@@ -23,7 +23,7 @@ class Item extends Model
         'image'
     ];
 
-    // public $type = [
+    // const TYPE = [
     //     1 => '茶トラ',
     //     2 => 'キジトラ',
     //     3 => 'サバトラ',

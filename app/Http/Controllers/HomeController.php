@@ -25,8 +25,20 @@ class HomeController extends Controller
     public function index()
     {
         $items = Item::all();
-        return view('home')->with([
+        return view('/home/list')->with([
             'items' => $items, 
         ]);
+    }
+
+    // // /searchlist/detail/{id}で実行
+    public function detail(Request $request){
+        $items = Item::find($request->id);
+    //     $keyword = $request->input('keyword');
+    //     $page = $request->input('previouspage');
+    //     // 商品詳細画面を表示
+        return view('/home/detail')->with([
+            'items' => $items,
+        ]);
+        
     }
 }
