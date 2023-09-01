@@ -51,6 +51,7 @@ class ItemController extends Controller
                 'name' => $request->name,
                 'type' => $request->type,
                 'gender' => $request->gender,
+                'age' => $request->age,
                 'healthCondition' => $request->health,
                 'recruitement'=> $request->health,
                 'detail' => $request->detail,
@@ -80,6 +81,7 @@ class ItemController extends Controller
             $item->name = $request->name;
             $item->type = $request->type;
             $item->gender = $request->gender;
+            $item->age = $request->age;
             $item->healthCondition = $request->health;
             $item->recruitement = $request->recruite;
             $item->detail = $request->detail;

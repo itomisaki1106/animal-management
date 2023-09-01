@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name', 100)->index();
             $table->tinyInteger('type')->nullable();
             $table->tinyInteger('gender')->index();
+            $table->tinyInteger('age')->index();
             $table->tinyInteger('healthCondition')->index();
             $table->tinyInteger('recruitement')->index();
             $table->string('detail', 500)->nullable();

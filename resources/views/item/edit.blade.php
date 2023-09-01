@@ -34,7 +34,7 @@
                             <select name="type" id="" class="form-control">
                                 @foreach(config('auth.type') as $key => $value)
                                 <option value="{{$key}}" @if($key == old('type',$items->type))selected @endif>{{$value}}</option>
-                                 @endforeach
+                                @endforeach
                             </select>
                         </div>
 
@@ -45,6 +45,11 @@
                                 <option value="{{$key}}" @if($key == old('gender',$items->gender))selected @endif>{{$value}}</option>
                                 @endforeach
                             </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">年齢(推定)</label>
+                            <input type="number" class="form-control" id="age" name="age" value="{{ old('name',$items->name) }}">
                         </div>
 
                         <div class="form-group">

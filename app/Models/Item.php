@@ -16,6 +16,7 @@ class Item extends Model
         'name',
         'type',
         'gender',
+        'age',
         'healthCondition',
         'recruitement',
         'detail',

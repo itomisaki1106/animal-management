@@ -47,6 +47,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="age">年齢(推定)</label>
+                            <input type="number" class="form-control" id="age" name="age" placeholder="名前">
+                        </div>
+
+                        <div class="form-group">
                             <label for="health">健康状態</label>
                             <select name="health" id="" class="form-control">
                                 @foreach(config('auth.hc') as $key => $value)
