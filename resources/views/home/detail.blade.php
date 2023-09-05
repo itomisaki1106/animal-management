@@ -73,6 +73,17 @@
                 <!-- <img src="/images/ball_image/0401.png" alt="..." style="width:25px;">   -->
                 <a href="/home/" class="link-success">商品一覧へ戻る</a>
                 <!-- <img src="/images/ball_image/0401.png" alt="..." style="width:25px;">   -->
+                @if($like)
+                    <form action="/like/unlike/{{$items->id}}" method="GET">
+                    <input type="hidden" value="{{ $items->id }}" name="item_id">
+                    <button type="submit" class="btn btn-primary">お気に入りから削除</button>
+                    </form>
+                @else
+                    <form action="/like/like/{{$items->id}}" method="GET">
+                    <input type="hidden" value="{{ $items->id }}" name="item_id">
+                    <button type="submit" class="btn btn-secondary">お気に入りに登録</button>
+                    </form>
+                @endif
             </div>
         </div>
     </div>

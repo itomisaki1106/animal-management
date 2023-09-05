@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,15 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return redirect('home/list');
+    // ログインしていない場合ログイン画面に遷移する
+});
 
 Auth::routes();
 
 Route::prefix('home')->group(function() {
     Route::get('/list', [App\Http\Controllers\HomeController::class, 'index']);
     Route::get('/detail/{id}', [App\Http\Controllers\HomeController::class, 'detail']);
+    Route::get('/favorite/', [App\Http\Controllers\HomeController::class, 'favorite']);
 });
 
 
@@ -32,3 +35,6 @@ Route::prefix('items')->group(function () {
     Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
     Route::post('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
 });
+
+Route::get('/like/like/{id}', [App\Http\Controllers\LikeController::class, 'like']);
+Route::get('/like/unlike/{id}', [App\Http\Controllers\LikeController::class, 'unlike']);

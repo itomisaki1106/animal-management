@@ -35,10 +35,6 @@
                                 @foreach(config('auth.type') as $key => $value)
                                 <option value="{{$key}}" @if($key == old('type',$items->type))selected @endif>{{$value}}</option>
                                 @endforeach
-                                @foreach(config('auth.type') as $key => $value)
-                                <option value="{{$key}}" @if($key == old('type',$items->type))selected @endif>{{$value}}</option>
-                                @endforeach
-
                             </select>
                         </div>
 

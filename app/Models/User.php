@@ -24,6 +24,10 @@ class User extends Authenticatable
         'role'
     ];
 
+    public function nice(){
+        return $this->hasMany('App\Models\Like');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

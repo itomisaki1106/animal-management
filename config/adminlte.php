@@ -291,10 +291,26 @@ return [
 
     'menu' => [
         [
-            'text' => '商品一覧',
+            'text' => 'ホーム画面',
+            'url'  => 'home/list',
+            'icon' => 'fas fa-gamepad',
+        ],
+        [
+            'text' => 'お気に入り一覧',
+            'url'  => 'home/favorite',
+            'icon' => 'fas fa-gamepad',
+        ],
+        [
+            'text' => '商品一覧(管理者用）',
             'url'  => 'items',
             'icon' => 'fas fa-gamepad',
         ],
+        [
+            'text' => '個体登録(管理者用)',
+            'url'  => 'items/add',
+            'icon' => 'fas fa-gamepad',
+        ],
+        
 
         // AdminLTEデフォルト
         /*
