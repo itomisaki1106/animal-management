@@ -29,11 +29,13 @@ Route::prefix('home')->group(function() {
 
 
 Route::prefix('items')->group(function () {
-    Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
-    Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
-    Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
-    Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
-    Route::post('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+    Route::group(['middleware'=>['auth','can:admin']],function(){
+        Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
+        Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
+        Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
+        Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+        Route::post('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+    });
 });
 
 Route::get('/like/like/{id}', [App\Http\Controllers\LikeController::class, 'like']);
