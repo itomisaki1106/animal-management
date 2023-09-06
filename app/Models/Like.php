@@ -15,11 +15,11 @@ class Like extends Model
         'user_id',
     ];
 
-    public function user() {
+    public function users() {
         return $this->belongsTo('App\Models\User');
     }
 
-    public function item() {
+    public function items() {
         return $this->belongsTo('App\Models\Item');
     }
 

@@ -53,12 +53,12 @@ class HomeController extends Controller
         $user_id = \Auth::id();
         $favorite_id = Like::where('user_id',$user_id)->pluck('item_id');
         
-        echo 'お気に入り一覧機能実装中';
+        // echo $favorite_id;
         
-        // $favorite_items = Item::where('id', $favorite_id)->get();
+        $favorite_items = Item::whereIn('id', $favorite_id)->get();
 
-        // return view('/home/favorite')->with([
-        //     'items' => $favorite_items,
-        // ]);
+        return view('/home/favorite')->with([
+            'items' => $favorite_items,
+        ]);
     }
 }

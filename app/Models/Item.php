@@ -23,8 +23,8 @@ class Item extends Model
         'image'
     ];
 
-    public function nice(){
-        return $this->hasMany('App\Models\Like');
+    public function likes(){
+        return $this->hasMany(Like::class);
     }
 
     // const TYPE = [

@@ -24,7 +24,7 @@ class User extends Authenticatable
         'role'
     ];
 
-    public function nice(){
+    public function likes(){
         return $this->hasMany('App\Models\Like');
     }
 

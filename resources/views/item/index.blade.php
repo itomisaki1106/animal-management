@@ -28,6 +28,7 @@
                                 <th>名前</th>
                                 <th>性別</th>
                                 <th>種別</th>
+                                <th>お気に入り登録状況</th>
                                 <th>募集状況</th>
                                 <th>&nbsp;</th>
                             </tr>
@@ -39,6 +40,7 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{config('auth.gender')[$item->gender] ?? ''}}</td>
                                     <td>{{config('auth.type')[$item->type] ?? ''}}</td>
+                                    <td>{{ $item->likes_count }}</td>
                                     <td>{{config('auth.recruite')[$item->recruitement] ?? ''}}</td>
                                     <!-- <td><a href="{{ url('items/edit/{$item->id}')}}">編集・削除</a></td> -->
                                     <td><a href="items/edit/{{$item->id}}">編集・削除</a></td>

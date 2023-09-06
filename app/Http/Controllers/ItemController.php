@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
+use App\Models\Like;
 
 class ItemController extends Controller
 {
@@ -24,12 +25,18 @@ class ItemController extends Controller
     public function index()
     {
         // 商品一覧取得
-        $items = Item::all();
+        $items = Item::withcount('likes')->get();
+        // $items = Item::all(); bladeでitem->likes->count()でも同様の結果
+        
+        // dd($items);
+        //$like_count = Like::where('item_id',)
+        //
         //dd(config('auth.type.1')); 
         //$value config()
         //$value = config('app.timezone');
         return view('item.index')->with([
             'items' => $items,
+    
         ]);
     }
 
