@@ -4,5 +4,14 @@
     margin-bottom:15px;
 }
 .active {
-    background-color: gray;
+    background-color: gray;   /*募集中以外の個体をグレー表示にする*/
+}
+.parent {
+    text-align: left;         /* 子要素を左揃えにする */
+    margin-top: 20px;
+}
+.inline-block-selectSize {
+    display: inline-block;      /* インラインブロック要素にする */
+    width:60%;
+    padding-right:20px;
 }
