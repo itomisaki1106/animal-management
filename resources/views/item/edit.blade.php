@@ -49,7 +49,7 @@
 
                         <div class="form-group">
                             <label for="age">年齢(推定)</label>
-                            <input type="number" class="form-control" id="age" name="age" value="{{ old('name',$items->name) }}">
+                            <input type="number" class="form-control" id="age" name="age" value="{{ old('age',$items->age) }}">
                         </div>
 
                         <div class="form-group">

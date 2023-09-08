@@ -30,6 +30,8 @@
                                 <th>種別</th>
                                 <th>お気に入り登録状況</th>
                                 <th>募集状況</th>
+                                <th>登録日時</th>
+                                <th>更新日時日時</th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -43,6 +45,8 @@
                                     <td>{{ $item->likes_count }}</td>
                                     <td>{{config('auth.recruite')[$item->recruitement] ?? ''}}</td>
                                     <!-- <td><a href="{{ url('items/edit/{$item->id}')}}">編集・削除</a></td> -->
+                                    <td>{{ $item->created_at }}</td>
+                                    <td>{{ $item->updated_at }}</td>
                                     <td><a href="items/edit/{{$item->id}}">編集・削除</a></td>
                                 </tr>
                             @endforeach

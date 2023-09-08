@@ -64,8 +64,8 @@ return [
     */
 
     'logo' => '<b>CAT　CONNECT</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo_img' => 'vendor/adminlte/dist/img/cat-icon.png',
+    'logo_img_class' => 'brand-image img-circle',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => '商品管理',
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/cat-icon.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -293,26 +293,26 @@ return [
         [
             'text' => 'ホーム画面',
             'url'  => 'home/list',
-            'icon' => 'fas fa-gamepad',
+            'icon' => 'fas fa-house',
         ],
         [
             'text' => 'お気に入り一覧',
             'url'  => 'home/favorite',
-            'icon' => 'fas fa-gamepad',
+            'icon' => 'far fa-heart',
+        
         ],
         [
             'text' => '商品一覧(管理者用）',
             'url'  => 'items',
-            'icon' => 'fas fa-gamepad',
+            'icon' => 'fas fa-list',
             'can'  => 'admin',
         ],
         [
             'text' => '個体登録(管理者用)',
             'url'  => 'items/add',
-            'icon' => 'fas fa-gamepad',
+            'icon' => 'fas fa-clipboard',
             'can'  => 'admin',
         ],
-        
 
         // AdminLTEデフォルト
         /*

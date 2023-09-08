@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $items = Item::all();
+        $items = Item::where('recruitement',1)->get();
         return view('/home/list')->with([
             'items' => $items, 
         ]);

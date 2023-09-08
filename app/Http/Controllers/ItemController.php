@@ -88,7 +88,7 @@ class ItemController extends Controller
 
             // 商品更新
             $item = Item::find($request->id);
-            $type = Item::TYPE;
+            // $type = Item::TYPE;
             
             $item->user_id = \Auth::id();
             $item->name = $request->name;

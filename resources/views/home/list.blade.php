@@ -7,6 +7,40 @@
 @stop
 
 @section('content')
+    <p>新しい出会いをサポートします</p>
+    <div class="container">
+            
+        <div class="row justify-content-start">
+        @foreach ($items as $item)    
+        <div class="col-3">
+                
+                <div class="card">
+                    <div class="card-body">
+                    @if(isset($item->image))
+                    <img src="data:image/png;base64, {{ $item->image }}" alt="商品画像" class="card-img-top">
+                    @else
+                    <img src="/images/no_image.png" alt="画像はありません" class="card-img-top">
+                    @endif
+                    <p>名前:{{ $item->name }}</p>
+                    <p>性別:{{config('auth.gender')[$item->gender] ?? ''}}</p>
+                    <p>{{ $item->age }}歳(推定)</p>
+                    @if($item->recruitement==1)
+                    <a href="/home/detail/{{$item->id}}">詳細</a>
+                    @else
+                    <p>募集を停止・終了しています。詳細はお問い合わせください</p>
+                    @endif
+                    </div>
+                </div>                    
+        </div>
+        @endforeach
+        </div>
+        
+    </div>
+@stop
+
+
+
+@section('content')
     <p>新しい家族を見つけましょう</p>
         <div class="row">
         <div class="col-12">

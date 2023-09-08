@@ -1,8 +1,8 @@
-.image-view {
-    width: 70px;
-    /* height: 30px; */
+.card-body img{
+    height:100px;
+    width:auto;
+    margin-bottom:15px;
 }
-.image-view img {
-    width: 70px;
-    /* height: 30px; */
+.active {
+    background-color: gray;
 }
