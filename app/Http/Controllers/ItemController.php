@@ -100,7 +100,7 @@ class ItemController extends Controller
             $item->detail = $request->detail;
             if(isset($request->image)){
                 $image = base64_encode(file_get_contents($request->image->getRealPath()));
-                $image = $item->image;
+                // $image = $item->image;
                 $item->image = $image;
             }
             

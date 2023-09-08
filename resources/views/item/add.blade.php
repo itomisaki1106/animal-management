@@ -23,7 +23,7 @@
                     <form method="POST" enctype="multipart/form-data">
                         @csrf
                         
-                            <div class="form-group">
+                            <div class="col-6 form-group">
                                 <label for="name">名前</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="名前" value="{{ old('name') }}">
                             </div>
@@ -72,13 +72,13 @@
 
                             <div class="form-group">
                                 <label for="detail">詳細</label>
-                                <textarea class="form-control" id="detail" name="detail" placeholder="詳細説明">{{ old('detail') }}</textarea>
+                                <textarea cols="20" rows="5" class="form-control" id="detail" name="detail" placeholder="詳細説明">{{ old('detail') }}</textarea>
                             </div>
 
                             <div class="form-group"> 
                                 <label for="image">画像</label>
                                 <!-- <input type="file" name="image" id="image" accept="image/jpeg, image/png"> -->
-                                <input type="file" name="image" id="image" class="form-control">
+                                <input type="file" name="image" id="image" class="col-4 form-control">
                             </div>
 
                         <div class="text-center">
