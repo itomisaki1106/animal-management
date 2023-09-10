@@ -78,8 +78,8 @@
                         <div class="form-group"> 
                             <label for="image">登録されている画像</label>
                             <div class = "form-group image-view">
-                                @if(isset($item->image))
-                                <img src="data:image/png;base64, {{ $item->image }}" alt="商品画像" class="card-img-top">
+                                @if(isset($items->image))
+                                <img src="data:image/png;base64, {{ $items->image }}" alt="商品画像" class="card-img-top">
                                 @else
                                 <img src="/images/no_image.png" alt="画像はありません" class="card-img-top">
                                 @endif
