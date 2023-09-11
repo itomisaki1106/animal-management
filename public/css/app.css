@@ -15,3 +15,16 @@
     width:60%;
     padding-right:20px;
 }
+.login-top-image{
+    text-align: center;
+}
+.login-top-image img{ 
+    height:100px;
+    width:auto;
+}
+.login-footer-image{
+    text-align: center; 
+}
+.login-footer-image img{
+    height: 50%;
+}   
