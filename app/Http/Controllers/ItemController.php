@@ -50,6 +50,18 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
+                'age' => 'required|max:4',
+                'detail' => 'max:400',
+                'image' => 'file|max:50|mimes:jpg,jpeg,png',
+            ],
+            [
+                'name.required' => '名前は必須です。',
+                'name.max' => '名前は100字以内です。',
+                'age.required' => '年齢は必須です。',
+                'age.max' => '年齢は4桁以内です。',
+                'detail.max' => '詳細情報は400文字以内で設定してください',
+                'image.max' => '50KBを超える画像は登録できません',
+                'image.mimes' => 'ファイル形式はjpg,jpeg,pngのみ登録可能です',
             ]);
 
             // 商品登録
@@ -84,7 +96,11 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
-            ]);
+                'age' => 'required|max:4',
+                'detail' => 'max:400',
+                'image' => 'file|max:50|mimes:jpg,jpeg,png',
+            ],
+            );
 
             // 商品更新
             $item = Item::find($request->id);
