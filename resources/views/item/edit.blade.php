@@ -94,6 +94,17 @@
                         <button type="submit" class="btn btn-primary">変更して保存</button>
                     </div>
                 </form>
+                <form class="text-center mt-3" action="{{ url('items/imagedelete') }}" method="POST">
+                @csrf
+                    <input type="hidden" name="id" value="{{ $items->id }}" >
+                    <button class="btn btn-success">画像のみ削除する</button>
+                </form>
+                <form  class="text-center mt-3" action="{{ url('items/delete')}}" method="POST">
+                @csrf
+                    <input type="hidden" name="id" value="{{ $items->id }}" >
+                    <button type="submit" class="btn btn-danger">データ削除(削除したデータは戻りません) </button>
+                </form>
+                
             </div>
         </div>
     </div>

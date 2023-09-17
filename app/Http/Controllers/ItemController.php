@@ -139,4 +139,19 @@ class ItemController extends Controller
         ]);    
         
     }
+    public function delete(Request $request){
+
+        $item = Item::find($request->id)->delete();
+
+
+        return redirect('/items');
+    }
+    public function imageDelete(Request $request){
+        
+            $item = Item::find($request->id);
+            $item->image = NULL;
+            $item->save();
+        
+            return redirect('/items');
+    }
 }
