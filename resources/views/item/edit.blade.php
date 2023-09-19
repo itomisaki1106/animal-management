@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', '商品登録')
+@section('title', '編集画面')
 
 @section('content_header')
     <h1>個体番号：{{ $items->id }} の編集</h1>

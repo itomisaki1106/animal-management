@@ -302,7 +302,7 @@ return [
         
         ],
         [
-            'text' => '商品一覧(管理者用）',
+            'text' => '個体一覧(管理者用）',
             'url'  => 'items',
             'icon' => 'fas fa-list',
             'can'  => 'admin',
