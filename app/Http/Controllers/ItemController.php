@@ -25,7 +25,7 @@ class ItemController extends Controller
     public function index()
     {
         // 商品一覧取得
-        $items = Item::withcount('likes')->get();
+        $items = Item::withcount('likes')->paginate(10);
         // $items = Item::all(); bladeでitem->likes->count()でも同様の結果
         
         // dd($items);
@@ -130,6 +130,7 @@ class ItemController extends Controller
         $user_id = \Auth::user()->name;
 
         $items = \DB::table('items')->find($id);
+        
         // $items = Item::find($id);
         
         return view('/item/edit')->with([

@@ -36,6 +36,7 @@
             @endforeach
             </div>
         @endif
+        {{$items->appends(request()->query())->links('pagination::bootstrap-4')}}
         <div class="pageBottom text-center">
             <h5>＜お問い合わせ先＞</h5>
             <p>株式会社CATIS</p>

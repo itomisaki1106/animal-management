@@ -54,6 +54,7 @@
                     </table>
                 </div>
             </div>
+            {{$items->appends(request()->query())->links('pagination::bootstrap-4')}}
         </div>
     </div>
 @stop
