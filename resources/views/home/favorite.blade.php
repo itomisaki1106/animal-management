@@ -22,7 +22,7 @@
         <div class="row justify-content-start">
             @foreach ($items as $item)    
             <div class="col-3">
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body {{$item->recruitement==1?'':'active'}}">
                     @if(isset($item->image))
                         <img src="data:image/png;base64, {{ $item->image }}" alt="商品画像" class="card-img-top">
@@ -36,6 +36,7 @@
                         <br>
                         <a href="/home/detail/{{$item->id}}">詳細はこちら</a>
                     @else
+                        <a href="/home/detail/{{$item->id}}">詳細はこちら</a>
                         <p>募集を停止・終了しています。下記よりお問い合わせください</p>
                     @endif
                     
@@ -45,7 +46,7 @@
             @endforeach
         @endif
         </div>
-    <div class="pageBottom text-center">
+    <div class="pageBottom text-center mt-4">
             <h5>＜お問い合わせ先＞</h5>
             <p>株式会社CATIS</p>
             <p>E-mai:XXX@XXX  Tel:000-000-0000</p>

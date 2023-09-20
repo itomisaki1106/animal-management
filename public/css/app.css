@@ -4,7 +4,7 @@
     margin-bottom:15px;
 }
 .active {
-    background-color: gray;   /*募集中以外の個体をグレー表示にする*/
+    background-color: rgb(181, 173, 173);   /*募集中以外の個体をグレー表示にする*/
 }
 .parent {
     text-align: left;         /* 子要素を左揃えにする */
