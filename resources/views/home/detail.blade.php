@@ -18,7 +18,7 @@
                 @if(isset($items->image))
                 <img src="data:image/png;base64, {{ $items->image }}" alt="商品画像" class="form-control img-fluid border-success" style="width: 500px;">
                 @else
-                <p>画像は登録されていません</p>
+                <img src="/images/no_image.png" alt="画像はありません" class="form-control img-fluid border-success" style="width: 500px;">
                 @endif
                 <br>
                 <ul style="list-style: none;">
@@ -64,7 +64,7 @@
                     </form>
                 @endif
                 <br>
-                <a href="/home/list" class="link-success">商品一覧へ戻る</a>
+                <a href="/home/list" class="link-success">募集一覧へ戻る</a>
             </div>
         </div>
     </div>
